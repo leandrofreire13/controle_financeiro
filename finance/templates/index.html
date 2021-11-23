@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Controle de gasto do mês</h2><br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Categoria</th>
+            <th scope="col">Descrição do gasto</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Vecimento</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for gasto in gastos %}
+        <tr>
+            <td>{{ gasto.categoria }}</td>
+            <td>{{ gasto.descricao }}</td>
+            <td>{{ gasto.valor }}</td>
+            <td>{{ gasto.vencimento|date:'d-m-Y' }}</td>
+            <td>{{ gasto.status }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
