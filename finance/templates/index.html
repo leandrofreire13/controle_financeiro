@@ -5,6 +5,14 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Gastos</h1>
+{% for gasto in gastos %}
+<p>{{ gasto.categoria }}</p>
+<p>{{ gasto.descricao }}</p>
+<p>{{ gasto.valor }}</p>
+<p>{{ gasto.vencimento }}</p>
+<p>{{ gasto.status }}</p>
+{% endfor %}
 
 </body>
 </html>
