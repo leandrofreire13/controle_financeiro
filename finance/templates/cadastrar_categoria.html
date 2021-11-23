@@ -8,7 +8,8 @@
 <form action="categoria" method="post" class="form-inline">
     <div class="form-group mb-2">
         {% csrf_token %}
-        {{ form.as_p }}
+        <label for="">Cadastrar Categoria</label>
+        <input type="text">
     </div>
      <button type="submit" class="btn btn-outline-primary">Cadastrar</button>
 </form>
