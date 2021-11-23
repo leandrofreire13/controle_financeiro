@@ -15,14 +15,7 @@ class GastoForm(forms.ModelForm):
             'vencimento',
             'status'
         ]
-        widgets = {
-            'descricao': TextInput(attrs={
-                'class': "form-control"
-            }),
-            'valor': TextInput(attrs={
-                'class': "form-control"
-            }),
-        }
+
 
 
 class CategoriaForm(forms.ModelForm):
