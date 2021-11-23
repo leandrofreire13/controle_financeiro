@@ -8,3 +8,7 @@ def listaGastos(request):
     gastos = Gasto.objects.all()
     return render(request, 'index.html', {'gastos': gastos})
 
+
+def cadastrarGasto(request):
+    return render(request, 'cadastrar.html')
+
