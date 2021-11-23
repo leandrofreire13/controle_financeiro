@@ -2,7 +2,7 @@
 
 {% block content %}
 <h2>Controle de gasto do mês</h2><br>
-{% for gasto in gastos %}
+
 <table class="table">
     <thead>
         <tr>
@@ -14,6 +14,7 @@
         </tr>
     </thead>
     <tbody>
+    {% for gasto in gastos %}
         <tr>
             <td>{{ gasto.categoria }}</td>
             <td>{{ gasto.descricao }}</td>
@@ -21,10 +22,7 @@
             <td>{{ gasto.vencimento|date:'d-m-Y' }}</td>
             <td>{{ gasto.status }}</td>
         </tr>
+    {% endfor %}
     </tbody>
 </table>
-
-{% endfor %}
-
-
 {% endblock %}
