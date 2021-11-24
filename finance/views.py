@@ -9,15 +9,15 @@ from .forms import GastoForm, CategoriaForm
 # GET lista todos gastos cadastrados
 def listaGastos(request):
     gastos = Gasto.objects.all()
-    return render(request, 'index.html', {'gastos': gastos})
+    categorias = Categoria.objects.all()
+    return render(request, 'index.html', {'gastos': gastos, 'categorias': categorias})
 
 # POST cadastrar novo gasto
 def cadastrarGasto(request):
     if request.method == "POST":
         form = GastoForm(request.POST)
         if form.is_valid():
-            gasto = form.save(commit=False)
-            gasto.save()
+            form.save()
             return redirect('gastos')
     else:
         form = GastoForm()
