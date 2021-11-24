@@ -23,6 +23,7 @@
              <div class="form-group">
                  {{ form.categoria }}
                 <select class="form-control" name="categoria">
+                  <option value="">------</option>
                   {% for categoria in categorias %}
                   <option value="{{ categoria.nome }}">{{ categoria.nome }}</option>
                   {% endfor %}
@@ -40,6 +41,7 @@
              </div>
 
              <select class="form-control" name="status">
+                 <option value="">------</option>
                  {% for gasto in gastos %}
                   <option value="{{ gasto.status }}">{{ gasto.status }}</option>
                  {% endfor %}
