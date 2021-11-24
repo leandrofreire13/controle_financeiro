@@ -13,15 +13,15 @@ def listaGastos(request):
 
 # POST cadastrar novo gasto
 def cadastrarGasto(request):
+    gastos = Gasto.objects.all()
     if request.method == "POST":
         form = GastoForm(request.POST)
         if form.is_valid():
-            gasto = form.save(commit=False)
-            gasto.save()
+            form.save()
             return redirect('gastos')
     else:
         form = GastoForm()
-    return render(request, 'cadastrar_gasto.html', {'form': form})
+    return render(request, 'cadastrar_gasto.html', {'form': form, 'gastos': gastos})
 
 
 def cadastraCategoria(request):

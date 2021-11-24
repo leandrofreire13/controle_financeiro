@@ -2,21 +2,16 @@
 
 {% block title %} Cadastrar Categoria {% endblock %}
 {% block content %}
-
 <form action="categoria" method="post" class="form-inline">
-    <div class="form-group mb-2">
-        {% csrf_token %}
-        <label for="">Nova Categoria</label>
-        <input type="text" name="nome">
-    </div>
-     <button type="submit" class="btn btn-outline-primary">Cadastrar</button>
+    {% csrf_token %}
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="nome" placeholder="Nova Categoria">
+    <button type="submit" class="btn btn-primary mb-2">Cadastrar</button>
 </form>
+
 <ul class="list-group">
     <h2>Categorias</h2>
-    <ul class="collection">
         {% for categoria in categorias %}
-        <li class="collection-item">{{ categoria.nome }}</li>
+        <li class="list-group-item">{{ categoria.nome }}</li>
         {% endfor %}
-    </ul>
 </ul>
 {% endblock %}

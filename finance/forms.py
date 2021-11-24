@@ -24,3 +24,4 @@ class CategoriaForm(forms.ModelForm):
         fields = [
             'nome'
         ]
+        widget = forms.Select(attrs={'class': 'form-control'})
