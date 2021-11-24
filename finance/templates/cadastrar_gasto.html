@@ -5,10 +5,30 @@
 {% block content %}
 <h2>Cadastrar novo gasto</h2>
 
-<form action="cadastrar" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
+    <form action="cadastrar" method="post">
+          {% csrf_token %}
+         <div class="form-group">
+             {{ form.categoria }}
+         </div>
+         <div class="form-group">
+             <input type="text" class="form-control" name="descricao" placeholder="Descrição">
+         </div>
+         <div class="form-group">
+             <input type="text" class="form-control" name="valor" placeholder="Valor">
+         </div>
 
-     <button type="submit" class="btn btn-outline-primary">Cadastrar</button>
-</form>
+         <div class="form-group">
+            <input type="date" class="form-control" name="vencimento" placeholder="Vencimento">
+         </div>
+
+         <select class="form-control" name="status">
+             <option value="">------</option>
+              <option value="Comprado">Comprado</option>
+              <option value="Lançado na fatura">Lançado na fatura</option>
+              <option value="Pago">Pago</option>
+          </select>
+        <br>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+
 {% endblock %}
